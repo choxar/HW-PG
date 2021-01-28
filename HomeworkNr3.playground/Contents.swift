@@ -33,7 +33,7 @@ var evenNumber = [Int]()
 for integer in integerArray {
   if integer % 2 == 0 {
     evenNumber += [integer]
-    print("Is")
+    print("Is even")
   }
 }
 print("My even numbers are: \(evenNumber)")
