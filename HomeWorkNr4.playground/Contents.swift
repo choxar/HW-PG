@@ -64,6 +64,16 @@ isEvenNumber(number: 7)
  print(array)
  */
 
+func createArray(from start: Int,to end: Int) -> [Int] {
+  var array: [Int] = []
+  for number in start...end {
+    array.append(number)
+  }
+  return array
+}
+var array = createArray(from: 1, to: 100)
+print(array)
+
 /*
  Exercise 5
  Create for loop.
@@ -73,6 +83,11 @@ isEvenNumber(number: 7)
  It should be 1/2 of createArray and started from [1,3,5.....
  */
 
-
+for i in array {
+  if isEvenNumber(number: i) {
+    array.remove(at: array.firstIndex(of: i)!)
+  }
+}
+print(array)
  
 
