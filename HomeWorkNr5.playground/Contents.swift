@@ -71,7 +71,7 @@ init (height: Float, width: Float) {
 
 class Rectangle: Figure {
     override func squareOfFigure() -> Float {
-        let square = (height * width) * 0.5
+        let square = (height * width) 
         return square
     }
     
