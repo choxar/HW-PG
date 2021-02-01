@@ -45,54 +45,49 @@ Exercise 2
  6.Finally call myRectangle.description()
 */
 
-class Parent {
-    var height: Float = 0.0
-    var width: Float = 0.0
+class Figure {
+    var height: Float
+    var width: Float
     var radius: Float = 0.0
     var square: Float = 0.0
     var perimeter: Float = 0.0
 
 
-init () {}
+//init () {}
 init (height: Float, width: Float) {
     self.height = height
     self.width = width
     }
 
     func squareOfFigure() -> Float {
-        let square = height * width
         return square
     }
     
     func perimeterOfFugure() -> Float {
-        let perimeter = (height*2) + (width*2)
         return perimeter
     }
     
  }
 
-class Child: Parent {
+class Rectangle: Figure {
     override func squareOfFigure() -> Float {
         let square = (height * width) * 0.5
         return square
     }
     
+    // If I add override to func It shows error: Method does not override any method from its superclass
+    
     func perimeterOfFigure() -> Float {
-        let perimeter = height + width + radius
+        let perimeter = (height*2) + (width*2)
         return perimeter
     }
     
-    func descriptionOfRectangle(radius: Int, height: Int, width: Int)
+    func description(height: Int, width: Int)
     {
      print("Rectangle area is: \(squareOfFigure()), and perimeter Of Figure is: \(perimeterOfFigure())")
     }
 }
 
-
-let Figure = Parent()
-let Rectangle = Child()
-
-
-Child().descriptionOfRectangle(radius: 2, height: 4, width: 4)
-
+let myRectangle = Rectangle(height: 5, width: 10) //I cant understand why I have to enter values here
+myRectangle.description(height: 4, width: 5) //and here
 
